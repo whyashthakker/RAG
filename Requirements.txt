@@ -1,0 +1,8 @@
+langchain_community
+faiss-gpu
+transformers
+PyPDF2
+gradio
+beautifulsoup4
+requests
+
