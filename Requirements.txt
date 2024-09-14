@@ -8,5 +8,5 @@ requests
 streamlit
 sentence_transformers
 pinecone
-openai=0.28
+openai==0.28
 pdfplumber
