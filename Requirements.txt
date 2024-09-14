@@ -5,4 +5,8 @@ PyPDF2
 gradio
 beautifulsoup4
 requests
-
+streamlit
+sentence_transformers
+pinecone
+openai=0.28
+pdfplumber
