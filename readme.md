@@ -8,36 +8,71 @@ This guide walks you through the process of deploying your application on an AWS
 2. Click on "Launch Instance".
 3. Provide a name for your instance.
 
-![Step 1](STEPS/1.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 1](STEPS/1.png)
+
+</details>
 
 4. Select the instance type that suits your needs.
 
-![Step 2](STEPS/2.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 2](STEPS/2.png)
+
+</details>
 
 ## 2. Configure Network Settings
 
 1. Click on "Edit" in the Network Settings section.
 
-![Step 3](STEPS/3.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 3](STEPS/3.png)
+
+</details>
 
 2. Click on "Add security group rule".
 
-![Step 4](STEPS/4.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 4](STEPS/4.png)
+
+</details>
 
 3. Add port range 8501 and set the source type to "Anywhere".
 4. Click on "Launch Instance".
 
-![Step 5](STEPS/5.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 5](STEPS/5.png)
+
+</details>
 
 ## 3. Connect to Your Instance
 
 1. Once the instance is launched, click on the instance ID.
 
-![Step 6](STEPS/6.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 6](STEPS/6.png)
+
+</details>
 
 2. Click on "Connect".
 
-![Step 7](STEPS/7.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 7](STEPS/7.png)
+
+</details>
 
 ## 4. Set Up the Environment
 
@@ -51,14 +86,24 @@ This guide walks you through the process of deploying your application on an AWS
    yum install git
    ```
 
-![Step 8](STEPS/8.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 8](STEPS/8.png)
+
+</details>
 
 3. Install Python3-pip:
    ```
    yum install python3-pip
    ```
 
-![Step 9](STEPS/9.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 9](STEPS/9.png)
+
+</details>
 
 4. Clone your repository:
    ```
@@ -70,14 +115,24 @@ This guide walks you through the process of deploying your application on an AWS
    python3 -m venv myenv
    ```
 
-![Step 10](STEPS/10.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 10](STEPS/10.png)
+
+</details>
 
 6. Install necessary libraries:
    ```
    pip install --no-cache-dir streamlit sentence-transformers pinecone-client openai==0.28 pdfplumber
    ```
 
-![Step 11](STEPS/11.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 11](STEPS/11.png)
+
+</details>
 
 ## 5. Configure and Run Your Application
 
@@ -91,7 +146,12 @@ This guide walks you through the process of deploying your application on an AWS
    nano <Your_pythonfile.py>
    ```
 
-![Step 12](STEPS/12.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 12](STEPS/12.png)
+
+</details>
 
 3. Run your script:
    ```
@@ -103,6 +163,12 @@ This guide walks you through the process of deploying your application on an AWS
    nohup python3 -m streamlit run <Your_pythonfile.py> &
    ```
 
-![Step 13](STEPS/13.jpg)
+<details>
+<summary>View Screenshot</summary>
+
+![Step 13](STEPS/13.png)
+
+</details>
 
 Congratulations! Your application should now be deployed and running on AWS EC2.
+
