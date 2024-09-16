@@ -11,7 +11,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 1](STEPS/1.png)
+![Step 1](STEPS/1.jpg)
 
 </details>
 
@@ -20,7 +20,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 2](STEPS/2.png)
+![Step 2](STEPS/2.jpg)
 
 </details>
 
@@ -31,7 +31,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 3](STEPS/3.png)
+![Step 3](STEPS/3.jpg)
 
 </details>
 
@@ -40,7 +40,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 4](STEPS/4.png)
+![Step 4](STEPS/4.jpg)
 
 </details>
 
@@ -50,7 +50,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 5](STEPS/5.png)
+![Step 5](STEPS/5.jpg)
 
 </details>
 
@@ -61,7 +61,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 6](STEPS/6.png)
+![Step 6](STEPS/6.jpg)
 
 </details>
 
@@ -70,7 +70,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 7](STEPS/7.png)
+![Step 7](STEPS/7.jpg)
 
 </details>
 
@@ -89,7 +89,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 8](STEPS/8.png)
+![Step 8](STEPS/8.jpg)
 
 </details>
 
@@ -101,7 +101,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 9](STEPS/9.png)
+![Step 9](STEPS/9.jpg)
 
 </details>
 
@@ -118,7 +118,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 10](STEPS/10.png)
+![Step 10](STEPS/10.jpg)
 
 </details>
 
@@ -130,7 +130,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 11](STEPS/11.png)
+![Step 11](STEPS/11.jpg)
 
 </details>
 
@@ -149,7 +149,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 12](STEPS/12.png)
+![Step 12](STEPS/12.jpg)
 
 </details>
 
@@ -166,7 +166,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 13](STEPS/13.png)
+![Step 13](STEPS/13.jpg)
 
 </details>
 
