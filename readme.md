@@ -8,36 +8,36 @@ This guide walks you through the process of deploying your application on an AWS
 2. Click on "Launch Instance".
 3. Provide a name for your instance.
 
-![Step 1](STEPS/1.png)
+![Step 1](STEPS/1.jpg)
 
 4. Select the instance type that suits your needs.
 
-![Step 2](STEPS/2.png)
+![Step 2](STEPS/2.jpg)
 
 ## 2. Configure Network Settings
 
 1. Click on "Edit" in the Network Settings section.
 
-![Step 3](STEPS/3.png)
+![Step 3](STEPS/3.jpg)
 
 2. Click on "Add security group rule".
 
-![Step 4](STEPS/4.png)
+![Step 4](STEPS/4.jpg)
 
 3. Add port range 8501 and set the source type to "Anywhere".
 4. Click on "Launch Instance".
 
-![Step 5](STEPS/5.png)
+![Step 5](STEPS/5.jpg)
 
 ## 3. Connect to Your Instance
 
 1. Once the instance is launched, click on the instance ID.
 
-![Step 6](STEPS/6.png)
+![Step 6](STEPS/6.jpg)
 
 2. Click on "Connect".
 
-![Step 7](STEPS/7.png)
+![Step 7](STEPS/7.jpg)
 
 ## 4. Set Up the Environment
 
@@ -51,14 +51,14 @@ This guide walks you through the process of deploying your application on an AWS
    yum install git
    ```
 
-![Step 8](STEPS/8.png)
+![Step 8](STEPS/8.jpg)
 
 3. Install Python3-pip:
    ```
    yum install python3-pip
    ```
 
-![Step 9](STEPS/9.png)
+![Step 9](STEPS/9.jpg)
 
 4. Clone your repository:
    ```
@@ -70,14 +70,14 @@ This guide walks you through the process of deploying your application on an AWS
    python3 -m venv myenv
    ```
 
-![Step 10](STEPS/10.png)
+![Step 10](STEPS/10.jpg)
 
 6. Install necessary libraries:
    ```
    pip install --no-cache-dir streamlit sentence-transformers pinecone-client openai==0.28 pdfplumber
    ```
 
-![Step 11](STEPS/11.png)
+![Step 11](STEPS/11.jpg)
 
 ## 5. Configure and Run Your Application
 
@@ -91,7 +91,7 @@ This guide walks you through the process of deploying your application on an AWS
    nano <Your_pythonfile.py>
    ```
 
-![Step 12](STEPS/12.png)
+![Step 12](STEPS/12.jpg)
 
 3. Run your script:
    ```
@@ -103,6 +103,6 @@ This guide walks you through the process of deploying your application on an AWS
    nohup python3 -m streamlit run <Your_pythonfile.py> &
    ```
 
-![Step 13](STEPS/13.png)
+![Step 13](STEPS/13.jpg)
 
 Congratulations! Your application should now be deployed and running on AWS EC2.
