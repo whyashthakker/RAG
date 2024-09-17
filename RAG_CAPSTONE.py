@@ -1,16 +1,20 @@
 import streamlit as st
 from sentence_transformers import SentenceTransformer
-import pinecone
 import openai
 import re
 import pdfplumber
 from pinecone import Pinecone, ServerlessSpec
 import os
 
-# Set up OpenAI
-openai.api_key = "your_api_key"
+from dotenv import load_dotenv
 
-pc = Pinecone(api_key="e4eebc8e-bb0f-44c7-bb0e-0cc29b19be24")
+load_dotenv()
+
+# Set up OpenAI
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# Set up Pinecone
+pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 
 # Check if the index exists and create it if not
 index_name = 'ragfinalproj'
@@ -78,7 +82,7 @@ def generate_response(query, context):
         {"role": "user", "content": f"Context: {context}\n\nQuestion: {query}\n\nAnswer:"}
     ]
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4o-mini",
         messages=messages,
         max_tokens=150
     )
