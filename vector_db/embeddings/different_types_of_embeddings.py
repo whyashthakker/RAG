@@ -51,7 +51,7 @@ def image_embeddings():
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
     
-    img = Image.open("vector_db/1.jpg")  # Replace with actual image path
+    img = Image.open("vector_db/1.jpg")  
     img_tensor = transform(img).unsqueeze(0)
     
     with torch.no_grad():

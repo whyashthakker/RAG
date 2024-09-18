@@ -10,7 +10,6 @@ pip install -r requirements.txt
 
 
 
-
 # AWS Deployment Guide
 
 This guide walks you through the process of deploying your application on an AWS EC2 instance.
