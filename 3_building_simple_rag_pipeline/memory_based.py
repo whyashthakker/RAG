@@ -5,7 +5,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain.prompts import PromptTemplate
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain.memory import ConversationBufferMemory
@@ -66,13 +66,17 @@ if not vectorstore:
     exit(1)
 
 # Create a prompt template
-prompt = ChatPromptTemplate.from_messages([
-    ("system", "You are a helpful assistant that answers questions based on the content of a specific website. "
-               "Use the following pieces of context to answer the user's question. "
-               "If you don't know the answer, just say that you don't know, don't try to make up an answer."),
-    MessagesPlaceholder(variable_name="chat_history"),
-    ("human", "{question}")
-])
+prompt_template = """Use the following pieces of context to answer the human's question. If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+Context: {context}
+
+Human: {question}
+
+Assistant: """
+
+PROMPT = PromptTemplate(
+    template=prompt_template, input_variables=["context", "question"]
+)
 
 # Create memory
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
@@ -82,7 +86,7 @@ qa_chain = ConversationalRetrievalChain.from_llm(
     llm=llm,
     retriever=vectorstore.as_retriever(),
     memory=memory,
-    combine_docs_chain_kwargs={"prompt": prompt}
+    combine_docs_chain_kwargs={"prompt": PROMPT}
 )
 
 # Chatbot function
