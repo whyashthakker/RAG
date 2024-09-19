@@ -4,11 +4,11 @@ python3.11 -m venv myenv
 
 source myenv/bin/activate
 
+pip install requests beautifulsoup4 langchain langchain-openai faiss-cpu numpy lxml openai
+
 pip install --upgrade pip
 
 pip install -r requirements.txt
-
-
 
 # AWS Deployment Guide
 
