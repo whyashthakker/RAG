@@ -1,3 +1,5 @@
+#pip install streamlit requests langchain-community lxml beautifulsoup4 langchain langchain-openai faiss-cpu numpy openai
+
 import os
 import requests
 from bs4 import BeautifulSoup
