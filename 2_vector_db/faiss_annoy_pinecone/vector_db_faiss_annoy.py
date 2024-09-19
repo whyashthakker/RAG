@@ -47,7 +47,7 @@ try:
     print(f"Vector dimension: {dimension}")
 
     # Example query
-    query_text = "How does vector search work?"
+    query_text = "Nature is Beautiful"
     query_vector = model.encode([query_text])[0]
     print(f"Encoded query: '{query_text}'")
 

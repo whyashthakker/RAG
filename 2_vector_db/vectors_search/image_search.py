@@ -46,7 +46,7 @@ if __name__ == "__main__":
     print("Creating vector database...")
     vector_db = create_vector_db(image_files)
     
-    query_image_path = "vector_db/1.jpg"
+    query_image_path = "vector_db/2.png"
     print(f"\nPerforming similarity search with query image: {query_image_path}")
     results = search_similar_images(query_image_path, vector_db)
     

@@ -30,7 +30,7 @@ try:
     print(f"Vector dimension: {dimension}")
 
     # Define index name
-    index_name = "quickstart"
+    index_name = "quickstart2"
 
     # Check if index already exists
     existing_indexes = pc.list_indexes()

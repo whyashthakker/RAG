@@ -137,3 +137,5 @@ uvicorn==0.30.6
 websockets==12.0
 wrapt==1.16.0
 yarl==1.11.1
+langchain-openai
+lxml
