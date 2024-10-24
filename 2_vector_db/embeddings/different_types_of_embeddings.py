@@ -51,7 +51,7 @@ def image_embeddings():
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
     
-    img = Image.open("vector_db/1.jpg")  
+    img = Image.open("2_vector_db/1.jpg")  
     img_tensor = transform(img).unsqueeze(0)
     
     with torch.no_grad():
@@ -82,7 +82,7 @@ def graph_embeddings():
 def audio_embeddings():
     # This uses Mel-frequency cepstral coefficients (MFCCs)
     # MFCCs are commonly used features in speech and audio processing
-    audio_path = "vector_db/1.wav"  # Replace with actual audio path
+    audio_path = "2_vector_db/1.wav"  # Replace with actual audio path
     y, sr = librosa.load(audio_path)
     mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)
     # Parameters:

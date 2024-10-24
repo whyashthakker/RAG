@@ -42,11 +42,11 @@ def search_similar_images(query_image_path, vector_db):
     return sorted_results
 
 if __name__ == "__main__":
-    image_files = ["vector_db/1.jpg", "vector_db/2.png"]
+    image_files = ["2_vector_db/1.jpg", "2_vector_db/2.png"]
     print("Creating vector database...")
     vector_db = create_vector_db(image_files)
     
-    query_image_path = "vector_db/2.png"
+    query_image_path = "2_vector_db/3.png"
     print(f"\nPerforming similarity search with query image: {query_image_path}")
     results = search_similar_images(query_image_path, vector_db)
     

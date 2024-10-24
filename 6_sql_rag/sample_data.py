@@ -4,32 +4,31 @@ import csv
 import os
 import sqlite3
 
-def generate_tata_motors_dataset(num_records=5000):
+def generate_tesla_motors_dataset(num_records=5000):
     models = {
-        "Tata Nexon": {"price_range": (700000, 1400000), "mileage_range": (16, 22)},
-        "Tata Altroz": {"price_range": (600000, 950000), "mileage_range": (19, 25)},
-        "Tata Harrier": {"price_range": (1400000, 2400000), "mileage_range": (14, 17)},
-        "Tata Safari": {"price_range": (1500000, 2500000), "mileage_range": (14, 16.5)},
-        "Tata Punch": {"price_range": (600000, 1000000), "mileage_range": (18, 24)},
-        "Tata Tiago": {"price_range": (500000, 800000), "mileage_range": (19, 26)},
-        "Tata Tigor": {"price_range": (600000, 950000), "mileage_range": (19, 25)},
+        "Tesla Model 3": {"price_range": (38990, 53990), "mileage_range": (267, 333)},
+        "Tesla Model Y": {"price_range": (43990, 69990), "mileage_range": (260, 330)},
+        "Tesla Model S": {"price_range": (74990, 129990), "mileage_range": (320, 405)},
+        "Tesla Model X": {"price_range": (79990, 139990), "mileage_range": (305, 348)},
+        "Tesla Cybertruck": {"price_range": (49900, 79900), "mileage_range": (250, 500)},
+        "Tesla Roadster": {"price_range": (200000, 250000), "mileage_range": (400, 620)}
     }
-    colors = ["Red", "Blue", "White", "Black", "Silver", "Grey", "Orange", "Green", "Bronze", "Copper"]
-    fuel_types = {"Petrol": 0.45, "Diesel": 0.35, "Electric": 0.15, "CNG": 0.05}
-    transmission_types = {"Manual": 0.6, "Automatic": 0.4}
+    colors = ["Pearl White", "Solid Black", "Deep Blue Metallic", "Midnight Silver Metallic", "Red Multi-Coat", "Ultra Red", "Stealth Grey"]
+    fuel_types = {"Electric": 1.0}  # Tesla only makes electric vehicles
+    transmission_types = {"Automatic": 1.0}  # Tesla only has automatic transmission
     states = [
-        "Maharashtra", "Gujarat", "Delhi", "Tamil Nadu", "Karnataka", "Uttar Pradesh", "West Bengal",
-        "Rajasthan", "Madhya Pradesh", "Telangana", "Kerala", "Bihar", "Punjab", "Haryana", "Odisha"
+        "California", "Texas", "Florida", "New York", "Illinois", "Washington", "Massachusetts",
+        "New Jersey", "Colorado", "Virginia", "Arizona", "Nevada", "Oregon", "Connecticut", "Maryland"
     ]
-    variants = ["XE", "XM", "XZ", "XZ+", "XZ+ Lux"]
+    variants = ["Standard Range", "Long Range", "Performance", "Plaid"]
     
     dataset = []
 
     for _ in range(num_records):
         model = random.choice(list(models.keys()))
         color = random.choice(colors)
-        fuel_type = random.choices(list(fuel_types.keys()), weights=list(fuel_types.values()))[0]
-        transmission = random.choices(list(transmission_types.keys()), weights=list(transmission_types.values()))[0]
+        fuel_type = "Electric"
+        transmission = "Automatic"
         variant = random.choice(variants)
         
         price_range = models[model]["price_range"]
@@ -39,16 +38,18 @@ def generate_tata_motors_dataset(num_records=5000):
         mileage = round(random.uniform(*mileage_range), 1)
         
         manufacture_date = datetime.now() - timedelta(days=random.randint(1, 730))  # Up to 2 years old
-        sale_date = manufacture_date + timedelta(days=random.randint(1, 180))  # Up to 6 months to sell
+        sale_date = manufacture_date + timedelta(days=random.randint(1, 90))  # Up to 3 months to sell
         state = random.choice(states)
         
         # Additional nuanced fields
-        engine_capacity = round(random.uniform(1.0, 2.0), 1) if fuel_type != "Electric" else 0
-        battery_capacity = round(random.uniform(30, 50), 1) if fuel_type == "Electric" else 0
-        charging_time = round(random.uniform(6, 10), 1) if fuel_type == "Electric" else 0
-        seating_capacity = random.choice([5, 7]) if model in ["Tata Safari", "Tata Harrier"] else 5
-        ground_clearance = round(random.uniform(165, 210), 1)
-        boot_space = random.randint(250, 450)
+        engine_capacity = 0  # Electric vehicles don't have engine capacity
+        battery_capacity = round(random.uniform(60, 100), 1)  # kWh
+        charging_time = round(random.uniform(0.5, 12), 1)  # Hours (varies by charger type)
+        seating_capacity = 7 if model in ["Tesla Model X", "Tesla Model Y"] else 5
+        ground_clearance = round(random.uniform(140, 170), 1)
+        boot_space = random.randint(
+            425, 900 if model in ["Tesla Model Y", "Tesla Model X"] else 650
+        )
         
         record = {
             "model": model,
@@ -73,7 +74,7 @@ def generate_tata_motors_dataset(num_records=5000):
     
     return dataset
 
-def save_to_csv(data, filename="tata_motors_data.csv"):
+def save_to_csv(data, filename="tesla_motors_data.csv"):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(script_dir, filename)
     
@@ -87,7 +88,7 @@ def save_to_csv(data, filename="tata_motors_data.csv"):
     
     return file_path
 
-def save_to_sqlite(data, db_name="tata_motors_data.db"):
+def save_to_sqlite(data, db_name="tesla_motors_data.db"):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     db_path = os.path.join(script_dir, db_name)
     
@@ -96,7 +97,7 @@ def save_to_sqlite(data, db_name="tata_motors_data.db"):
     
     # Create table
     cursor.execute('''
-    CREATE TABLE IF NOT EXISTS tata_motors (
+    CREATE TABLE IF NOT EXISTS tesla_motors (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         model TEXT,
         variant TEXT,
@@ -120,7 +121,7 @@ def save_to_sqlite(data, db_name="tata_motors_data.db"):
     # Insert data
     for record in data:
         cursor.execute('''
-        INSERT INTO tata_motors (
+        INSERT INTO tesla_motors (
             model, variant, color, fuel_type, transmission, price, manufacture_date, sale_date,
             state, mileage, engine_capacity, battery_capacity, charging_time, seating_capacity,
             ground_clearance, boot_space
@@ -133,21 +134,21 @@ def save_to_sqlite(data, db_name="tata_motors_data.db"):
     return db_path
 
 # Generate the dataset
-tata_motors_data = generate_tata_motors_dataset(5000)
+tesla_motors_data = generate_tesla_motors_dataset(5000)
 
 # Save the dataset to a CSV file
-csv_file_path = save_to_csv(tata_motors_data)
+csv_file_path = save_to_csv(tesla_motors_data)
 
 # Save the dataset to a SQLite database
-db_file_path = save_to_sqlite(tata_motors_data)
+db_file_path = save_to_sqlite(tesla_motors_data)
 
 print(f"Dataset has been saved to CSV: {csv_file_path}")
 print(f"Dataset has been saved to SQLite database: {db_file_path}")
 
 # Print the first 5 records as a sample
-for i, record in enumerate(tata_motors_data[:5], 1):
+for i, record in enumerate(tesla_motors_data[:5], 1):
     print(f"\nRecord {i}:")
     for key, value in record.items():
         print(f"  {key}: {value}")
 
-print(f"\nTotal records generated and saved: {len(tata_motors_data)}")
+print(f"\nTotal records generated and saved: {len(tesla_motors_data)}")

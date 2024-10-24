@@ -32,7 +32,7 @@ try:
     print(f"Created FAISS index and added {len(embeddings)} vectors.")
 
     # Example query
-    query_text = "Meaning of life?"
+    query_text = "What is FAISS?"
     query_vector = model.encode([query_text])[0]
     print(f"Encoded query: '{query_text}'")
 

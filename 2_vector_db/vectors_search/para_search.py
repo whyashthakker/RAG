@@ -113,7 +113,7 @@ Risk Assessment: Evaluate investment similarities and portfolio diversification.
     print("Creating vector database...")
     search_engine.create_vector_db(texts)
     
-    query_text = "What is Vector Database?"
+    query_text = "What is a Pokemon?"
     print(f"\nPerforming similarity search with query text: '{query_text}'")
     results = search_engine.search_similar_texts(query_text)
     

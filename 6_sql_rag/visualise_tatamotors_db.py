@@ -34,5 +34,5 @@ def show_database_structure(db_path):
     conn.close()
 
 if __name__ == "__main__":
-    db_path = '6_sql_rag/tata_motors_data.db'
+    db_path = '6_sql_rag/tesla_motors_data.db'
     show_database_structure(db_path)

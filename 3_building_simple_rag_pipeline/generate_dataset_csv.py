@@ -3,12 +3,12 @@ from datetime import datetime, timedelta
 import csv
 import os
 
-def generate_tata_motors_dataset(num_records=500):
-    models = ["Tata Nexon", "Tata Altroz", "Tata Harrier", "Tata Safari", "Tata Punch", "Tata Tiago", "Tata Tigor"]
-    colors = ["Red", "Blue", "White", "Black", "Silver", "Grey", "Orange"]
-    fuel_types = ["Petrol", "Diesel", "Electric", "CNG"]
-    transmission_types = ["Manual", "Automatic"]
-    states = ["Maharashtra", "Gujarat", "Delhi", "Tamil Nadu", "Karnataka", "Uttar Pradesh", "West Bengal"]
+def generate_tesla_motors_dataset(num_records=500):
+    models = ["Tesla Model S", "Tesla Model 3", "Tesla Model X", "Tesla Model Y", "Tesla Cybertruck", "Tesla Roadster"]
+    colors = ["Red", "Blue", "White", "Black", "Silver", "Grey", "Midnight Silver"]
+    fuel_types = ["Electric"]  # Tesla only makes electric vehicles
+    transmission_types = ["Automatic"]  # Tesla only has automatic transmission
+    states = ["California", "Texas", "Florida", "New York", "Washington", "Illinois", "Massachusetts"]
 
     dataset = []
 
@@ -17,11 +17,11 @@ def generate_tata_motors_dataset(num_records=500):
         color = random.choice(colors)
         fuel_type = random.choice(fuel_types)
         transmission = random.choice(transmission_types)
-        price = round(random.uniform(500000, 2500000), 2)
+        price = round(random.uniform(35000, 150000), 2)  # Adjusted price range for Tesla vehicles
         manufacture_date = datetime.now() - timedelta(days=random.randint(1, 365))
         sale_date = manufacture_date + timedelta(days=random.randint(1, 90))
         state = random.choice(states)
-        mileage = round(random.uniform(10, 25), 1)
+        mileage = round(random.uniform(250, 400), 1)  # Adjusted for electric vehicle range
         
         record = {
             "model": model,
@@ -39,7 +39,7 @@ def generate_tata_motors_dataset(num_records=500):
     
     return dataset
 
-def save_to_csv(data, filename="tata_motors_data.csv"):
+def save_to_csv(data, filename="tesla_motors_data.csv"):
     # Get the directory of the current script
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
@@ -58,17 +58,17 @@ def save_to_csv(data, filename="tata_motors_data.csv"):
     return file_path
 
 # Generate the dataset
-tata_motors_data = generate_tata_motors_dataset()
+tesla_motors_data = generate_tesla_motors_dataset()
 
 # Save the dataset to a CSV file
-csv_file_path = save_to_csv(tata_motors_data)
+csv_file_path = save_to_csv(tesla_motors_data)
 
 print(f"Dataset has been saved to: {csv_file_path}")
 
 # Print the first 5 records as a sample
-for i, record in enumerate(tata_motors_data[:5], 1):
+for i, record in enumerate(tesla_motors_data[:5], 1):
     print(f"\nRecord {i}:")
     for key, value in record.items():
         print(f"  {key}: {value}")
 
-print(f"\nTotal records generated and saved: {len(tata_motors_data)}")
+print(f"\nTotal records generated and saved: {len(tesla_motors_data)}")
