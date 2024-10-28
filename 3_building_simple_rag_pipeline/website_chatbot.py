@@ -12,10 +12,11 @@ import time
 import random
 import tempfile
 from langchain_community.document_loaders import BSHTMLLoader
+from langchain.memory import ConversationBufferMemory
 
 # Configuration variables
-CHUNK_SIZE = 1000
-CHUNK_OVERLAP = 100
+CHUNK_SIZE = 300
+CHUNK_OVERLAP = 50
 MAX_TOKENS = 15000
 MODEL_NAME = "gpt-4o-mini"
 TEMPERATURE = 0.4
@@ -144,6 +145,8 @@ PROMPT = PromptTemplate(
     template=template, input_variables=["context", "question"]
 )
 
+memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+
 def rag_pipeline(query, qa_chain, vectorstore):
     relevant_docs = vectorstore.similarity_search_with_score(query, k=3)
     
@@ -192,6 +195,7 @@ if __name__ == "__main__":
                 llm=llm,
                 chain_type="stuff",
                 retriever=vectorstore.as_retriever(),
+                memory = memory,
                 chain_type_kwargs={"prompt": PROMPT}
             )
             

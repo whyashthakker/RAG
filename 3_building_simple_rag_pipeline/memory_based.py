@@ -18,7 +18,7 @@ if not OPENAI_API_KEY:
 
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200
-WEBSITE_URL = "https://catdir.loc.gov/catdir/samples/random045/2002031355.html"
+WEBSITE_URL = "https://www.snapy.ai/"
 
 # Initialize OpenAI components
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.4)

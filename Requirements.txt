@@ -155,3 +155,6 @@ websockets
 wrapt
 xxhash
 yarl
+fitz
+pytesseract
+pymupdf
