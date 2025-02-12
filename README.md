@@ -1,14 +1,26 @@
 # Running the project
 
-python3.11 -m venv myenv
+## Environment Setup - Python
 
-source myenv/bin/activate
+1. Create python virtual environment
+   ```sh
+   python3.11 -m venv myenv
+   ```
 
-pip install requests beautifulsoup4 langchain langchain-openai faiss-cpu numpy lxml openai
+2. Activate the environment
+   ```sh
+   source myenv/bin/activate
+   ```
 
-pip install --upgrade pip
+3. Verify latest version of pip is installed
+   ```sh
+   pip install --upgrade pip
+   ```
 
-pip install -r requirements.txt
+4. Install required python packages
+   ```sh
+   pip install -r requirements.txt
+   ```
 
 # AWS Deployment Guide
 
@@ -23,7 +35,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 1](STEPS/1.jpg)
+![Step 1](11_deployment_steps/1.jpg)
 
 </details>
 
@@ -32,7 +44,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 2](STEPS/2.jpg)
+![Step 2](11_deployment_steps/2.jpg)
 
 </details>
 
@@ -43,7 +55,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 3](STEPS/3.jpg)
+![Step 3](11_deployment_steps/3.jpg)
 
 </details>
 
@@ -52,7 +64,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 4](STEPS/4.jpg)
+![Step 4](11_deployment_steps/4.jpg)
 
 </details>
 
@@ -62,7 +74,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 5](STEPS/5.jpg)
+![Step 5](11_deployment_steps/5.jpg)
 
 </details>
 
@@ -73,7 +85,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 6](STEPS/6.jpg)
+![Step 6](11_deployment_steps/6.jpg)
 
 </details>
 
@@ -82,7 +94,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 7](STEPS/7.jpg)
+![Step 7](11_deployment_steps/7.jpg)
 
 </details>
 
@@ -101,7 +113,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 8](STEPS/8.jpg)
+![Step 8](11_deployment_steps/8.jpg)
 
 </details>
 
@@ -113,7 +125,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 9](STEPS/9.jpg)
+![Step 9](11_deployment_steps/9.jpg)
 
 </details>
 
@@ -130,7 +142,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 10](STEPS/10.jpg)
+![Step 10](11_deployment_steps/10.jpg)
 
 </details>
 
@@ -142,7 +154,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 11](STEPS/11.jpg)
+![Step 11](11_deployment_steps/11.jpg)
 
 </details>
 
@@ -161,7 +173,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 12](STEPS/12.jpg)
+![Step 12](11_deployment_steps/12.jpg)
 
 </details>
 
@@ -178,7 +190,7 @@ This guide walks you through the process of deploying your application on an AWS
 <details>
 <summary>View Screenshot</summary>
 
-![Step 13](STEPS/13.jpg)
+![Step 13](11_deployment_steps/13.jpg)
 
 </details>
 

@@ -1,3 +1,5 @@
 .env
 
 /myenv
+
+.DS_Store
